@@ -14,6 +14,6 @@ class ConfigMemoryLimitCollector extends BaseCollector
 
         $prometheus->addGauge('opcache_config_memory_limit_bytes')
             ->help('The configured OPcache memory limit in bytes.')
-            ->value($this->directive('opcache.memory_consumption'));
+            ->value((float) $this->directive('opcache.memory_consumption'));
     }
 }

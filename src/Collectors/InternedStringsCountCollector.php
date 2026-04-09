@@ -14,6 +14,6 @@ class InternedStringsCountCollector extends BaseCollector
 
         $prometheus->addGauge('opcache_interned_strings_count')
             ->help('The number of interned strings.')
-            ->value($this->status('interned_strings_usage.number_of_strings'));
+            ->value((float) $this->status('interned_strings_usage.number_of_strings'));
     }
 }

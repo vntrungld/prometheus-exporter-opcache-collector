@@ -14,6 +14,6 @@ class JitEnabledCollector extends BaseCollector
 
         $prometheus->addGauge('opcache_jit_enabled')
             ->help('Whether JIT is enabled.')
-            ->value($this->status('jit.enabled') ? 1 : 0);
+            ->value($this->status('jit.enabled') ? 1.0 : 0.0);
     }
 }

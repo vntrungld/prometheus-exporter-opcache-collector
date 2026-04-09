@@ -8,10 +8,8 @@ class UpCollector extends BaseCollector
 {
     public function register(Prometheus $prometheus): void
     {
-        $up = (bool) $this->status();
-
         $prometheus->addGauge('opcache_up')
             ->help('Whether OPcache is available.')
-            ->value($up);
+            ->value($this->status() ? 1.0 : 0.0);
     }
 }

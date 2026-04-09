@@ -14,6 +14,6 @@ class ConfigJitBufferSizeCollector extends BaseCollector
 
         $prometheus->addGauge('opcache_config_jit_buffer_size_bytes')
             ->help('The configured JIT buffer size in bytes.')
-            ->value($this->directive('opcache.jit_buffer_size'));
+            ->value((float) $this->directive('opcache.jit_buffer_size'));
     }
 }

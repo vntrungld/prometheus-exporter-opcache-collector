@@ -14,6 +14,6 @@ class WastedMemoryCollector extends BaseCollector
 
         $prometheus->addGauge('opcache_wasted_memory_bytes')
             ->help('The amount of wasted memory by OPcache.')
-            ->value($this->status('memory_usage.wasted_memory'));
+            ->value((float) $this->status('memory_usage.wasted_memory'));
     }
 }

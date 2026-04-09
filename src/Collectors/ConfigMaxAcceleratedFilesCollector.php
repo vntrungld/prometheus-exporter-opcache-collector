@@ -14,6 +14,6 @@ class ConfigMaxAcceleratedFilesCollector extends BaseCollector
 
         $prometheus->addGauge('opcache_config_max_accelerated_files')
             ->help('The configured maximum number of accelerated files.')
-            ->value($this->directive('opcache.max_accelerated_files'));
+            ->value((float) $this->directive('opcache.max_accelerated_files'));
     }
 }

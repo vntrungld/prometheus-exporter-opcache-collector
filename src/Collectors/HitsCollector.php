@@ -14,6 +14,6 @@ class HitsCollector extends BaseCollector
 
         $prometheus->addCounter('opcache_hits_total')
             ->help('The total number of OPcache cache hits.')
-            ->value($this->status('opcache_statistics.hits'));
+            ->value((float) $this->status('opcache_statistics.hits'));
     }
 }

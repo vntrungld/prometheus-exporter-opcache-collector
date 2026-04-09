@@ -14,6 +14,6 @@ class CachedKeysCollector extends BaseCollector
 
         $prometheus->addGauge('opcache_cached_keys')
             ->help('The number of keys in the OPcache hash table.')
-            ->value($this->status('opcache_statistics.num_cached_keys'));
+            ->value((float) $this->status('opcache_statistics.num_cached_keys'));
     }
 }

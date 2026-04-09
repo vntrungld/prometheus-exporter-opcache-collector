@@ -14,6 +14,6 @@ class InternedStringsBufferCollector extends BaseCollector
 
         $prometheus->addGauge('opcache_interned_strings_buffer_bytes')
             ->help('The total buffer size for interned strings.')
-            ->value($this->status('interned_strings_usage.buffer_size'));
+            ->value((float) $this->status('interned_strings_usage.buffer_size'));
     }
 }

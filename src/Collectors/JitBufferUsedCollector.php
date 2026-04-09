@@ -14,6 +14,6 @@ class JitBufferUsedCollector extends BaseCollector
 
         $prometheus->addGauge('opcache_jit_buffer_used_bytes')
             ->help('The amount of used JIT buffer.')
-            ->value($this->status('jit.buffer_used'));
+            ->value((float) $this->status('jit.buffer_size') - (float) $this->status('jit.buffer_free'));
     }
 }

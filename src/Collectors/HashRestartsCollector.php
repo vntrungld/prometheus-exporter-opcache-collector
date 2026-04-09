@@ -14,6 +14,6 @@ class HashRestartsCollector extends BaseCollector
 
         $prometheus->addGauge('opcache_hash_restarts')
             ->help('The number of OPcache hash table overflow restarts.')
-            ->value($this->status('opcache_statistics.hash_restarts'));
+            ->value((float) $this->status('opcache_statistics.hash_restarts'));
     }
 }

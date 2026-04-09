@@ -16,6 +16,6 @@ class ConfigInternedStringsBufferCollector extends BaseCollector
 
         $prometheus->addGauge('opcache_config_interned_strings_buffer_bytes')
             ->help('The configured interned strings buffer size in bytes.')
-            ->value($value * 1024 * 1024);
+            ->value((float) $value * 1024 * 1024);
     }
 }

@@ -14,6 +14,6 @@ class MissesCollector extends BaseCollector
 
         $prometheus->addCounter('opcache_misses_total')
             ->help('The total number of OPcache cache misses.')
-            ->value($this->status('opcache_statistics.misses'));
+            ->value((float) $this->status('opcache_statistics.misses'));
     }
 }

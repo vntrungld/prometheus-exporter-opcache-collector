@@ -14,6 +14,6 @@ class InternedStringsFreeCollector extends BaseCollector
 
         $prometheus->addGauge('opcache_interned_strings_free_bytes')
             ->help('The amount of free memory for interned strings.')
-            ->value($this->status('interned_strings_usage.free_memory'));
+            ->value((float) $this->status('interned_strings_usage.free_memory'));
     }
 }

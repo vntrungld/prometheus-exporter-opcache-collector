@@ -14,6 +14,6 @@ class ManualRestartsCollector extends BaseCollector
 
         $prometheus->addGauge('opcache_manual_restarts')
             ->help('The number of OPcache manual restarts.')
-            ->value($this->status('opcache_statistics.manual_restarts'));
+            ->value((float) $this->status('opcache_statistics.manual_restarts'));
     }
 }

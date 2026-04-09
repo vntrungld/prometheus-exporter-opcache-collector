@@ -14,6 +14,6 @@ class JitBufferSizeCollector extends BaseCollector
 
         $prometheus->addGauge('opcache_jit_buffer_size_bytes')
             ->help('The total JIT buffer size.')
-            ->value($this->status('jit.buffer_size'));
+            ->value((float) $this->status('jit.buffer_size'));
     }
 }

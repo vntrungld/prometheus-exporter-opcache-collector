@@ -14,6 +14,6 @@ class JitBufferFreeCollector extends BaseCollector
 
         $prometheus->addGauge('opcache_jit_buffer_free_bytes')
             ->help('The amount of free JIT buffer.')
-            ->value($this->status('jit.buffer_free'));
+            ->value((float) $this->status('jit.buffer_free'));
     }
 }

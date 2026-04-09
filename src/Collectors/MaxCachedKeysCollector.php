@@ -14,6 +14,6 @@ class MaxCachedKeysCollector extends BaseCollector
 
         $prometheus->addGauge('opcache_max_cached_keys')
             ->help('The maximum number of keys in the OPcache hash table.')
-            ->value($this->status('opcache_statistics.max_cached_keys'));
+            ->value((float) $this->status('opcache_statistics.max_cached_keys'));
     }
 }

@@ -14,6 +14,6 @@ class CachedScriptsCollector extends BaseCollector
 
         $prometheus->addGauge('opcache_cached_scripts')
             ->help('The number of scripts cached by OPcache.')
-            ->value($this->status('opcache_statistics.num_cached_scripts'));
+            ->value((float) $this->status('opcache_statistics.num_cached_scripts'));
     }
 }

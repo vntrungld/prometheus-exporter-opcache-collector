@@ -14,6 +14,6 @@ class InternedStringsUsedCollector extends BaseCollector
 
         $prometheus->addGauge('opcache_interned_strings_used_bytes')
             ->help('The amount of used memory for interned strings.')
-            ->value($this->status('interned_strings_usage.used_memory'));
+            ->value((float) $this->status('interned_strings_usage.used_memory'));
     }
 }

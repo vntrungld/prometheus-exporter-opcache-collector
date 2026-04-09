@@ -14,6 +14,6 @@ class OomRestartsCollector extends BaseCollector
 
         $prometheus->addGauge('opcache_oom_restarts')
             ->help('The number of OPcache out-of-memory restarts.')
-            ->value($this->status('opcache_statistics.oom_restarts'));
+            ->value((float) $this->status('opcache_statistics.oom_restarts'));
     }
 }

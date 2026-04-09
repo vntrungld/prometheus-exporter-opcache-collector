@@ -21,18 +21,21 @@ class JitBufferUsedCollectorTest extends TestCase
         $statusGetter = Mockery::mock(StatusGetter::class);
         $statusGetter->shouldReceive('getStatus')
             ->with(null, null)
-            ->andReturn(['jit' => ['buffer_used' => 67108864]]);
+            ->andReturn(['jit' => ['buffer_size' => 134217728, 'buffer_free' => 67108864]]);
         $statusGetter->shouldReceive('getStatus')
             ->with('jit', null)
-            ->andReturn(['buffer_used' => 67108864]);
+            ->andReturn(['buffer_size' => 134217728, 'buffer_free' => 67108864]);
         $statusGetter->shouldReceive('getStatus')
-            ->with('jit.buffer_used', null)
+            ->with('jit.buffer_size', null)
+            ->andReturn(134217728);
+        $statusGetter->shouldReceive('getStatus')
+            ->with('jit.buffer_free', null)
             ->andReturn(67108864);
 
         /** @var MockInterface|Gauge $gauge */
         $gauge = Mockery::mock(Gauge::class);
         $gauge->shouldReceive('help')->andReturnSelf();
-        $gauge->shouldReceive('value')->with(67108864)->andReturnSelf();
+        $gauge->shouldReceive('value')->with(67108864.0)->andReturnSelf();
 
         /** @var MockInterface|Prometheus $prometheus */
         $prometheus = Mockery::mock(Prometheus::class);

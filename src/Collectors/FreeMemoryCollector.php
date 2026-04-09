@@ -14,6 +14,6 @@ class FreeMemoryCollector extends BaseCollector
 
         $prometheus->addGauge('opcache_free_memory_bytes')
             ->help('The amount of free memory for OPcache.')
-            ->value($this->status('memory_usage.free_memory'));
+            ->value((float) $this->status('memory_usage.free_memory'));
     }
 }
