@@ -1,0 +1,49 @@
+{
+    "name": "vntrungld/prometheus-exporter-opcache-collector",
+    "description": "OPcache Collector for Prometheus Exporter",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "vntrungld",
+            "email": "vn.trungld@gmail.com",
+            "homepage": "https://github.com/vntrungld"
+        }
+    ],
+    "homepage": "https://github.com/vntrungld/prometheus-exporter-opcache-collector",
+    "keywords": ["Laravel", "Prometheus Exporter", "OPcache Collector"],
+    "require": {
+        "php": "^7.2|^8.0",
+        "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
+        "vntrungld/prometheus-exporter": "^1.1"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.4",
+        "orchestra/testbench": "^4.0|^5.0|^6.0|^7.0|^8.0|^9.0|^10.0",
+        "phpunit/phpunit": "^9.0|^10.0|^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vntrungld\\PrometheusExporterOpcacheCollector\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Vntrungld\\PrometheusExporterOpcacheCollector\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vntrungld\\PrometheusExporterOpcacheCollector\\PrometheusExporterOpcacheCollectorServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
